@@ -1,5 +1,5 @@
-import { Contract } from 'src/const/types';
-import * as contractDal from '../../db/dal/contract';
+import { Contract } from '../../const/types';
+import * as contractDal from '../../db/dal/contracts';
 import { ERROR_INTERNAL } from '../../const/enums';
 
 export const getById = async (profileId: number, contractId: number): Promise<Contract> => {

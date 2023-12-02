@@ -9,6 +9,8 @@ export enum RESPONSE_STATUS_CODE {
 export enum RESPONSE_STATUS_MESSAGE {
   UNAUTHORIZED = 'Unauthorized.',
   MISSING_PROFILE = 'Profile was not found.',
+  NOT_CLIENT = 'Profile is not a client.',
   NOT_PERMITTED = 'Not permitted.',
-  INTERNALL_ERROR = 'Internall error, please try again later.'
+  INTERNALL_ERROR = 'Internall error, please try again later.',
+  INSUFFICIENT_BALANCE = 'Insufficient balance.',
 }

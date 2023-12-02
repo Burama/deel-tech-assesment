@@ -1,9 +1,9 @@
 import * as defaultProfiles from '../../const/defaultProfiles.json';
 import * as defaultContracts from '../../const/defaultContracts.json';
 import * as defaultJobs from '../../const/defaultJobs.json';
-import * as profileDal from '../dal/profile';
-import * as contractDal from '../dal/contract';
-import * as jobDal from '../dal/job';
+import * as profileDal from '../dal/profiles';
+import * as contractDal from '../dal/contracts';
+import * as jobDal from '../dal/jobs';
 
 import { Profile, Contract, Job } from '../../const/types';
 import { sequelizeConnection } from '..';

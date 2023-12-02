@@ -7,6 +7,7 @@ import {
   AllowNull,
   Default,
   ForeignKey,
+  BelongsTo,
 } from 'sequelize-typescript';
 
 import { ContractModel } from './contract.model';
@@ -44,4 +45,7 @@ export class JobModel extends Model<JobModel> {
 
   @Column
   public paymentDate: Date;
+
+  @BelongsTo(() => ContractModel)
+  public contract: ContractModel;
 }

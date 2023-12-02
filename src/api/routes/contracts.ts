@@ -18,19 +18,22 @@ contractsRouter.get('/:contractId', getProfile, async (req: RequestWithProfile, 
       .send(contract);
   } catch(error) {
     console.error(error);
-    
-    if (error.message === ERROR_INTERNAL.NOT_PERMITTED) {
-      return res
+
+    switch (error.message) {
+      case ERROR_INTERNAL.NOT_PERMITTED: {
+        return res
         .status(RESPONSE_STATUS_CODE.NOT_PERMITTED)
         .send({
           message: RESPONSE_STATUS_MESSAGE.NOT_PERMITTED,
         });
-    } else {
-      return res
+      }
+      default: {
+        return res
         .status(RESPONSE_STATUS_CODE.INTERNALL_ERROR)
         .send({
           message: RESPONSE_STATUS_MESSAGE.INTERNALL_ERROR,
         })
+      }
     }
   }
 });

@@ -1,7 +1,7 @@
 import { Response, NextFunction } from 'express'
 import { RequestWithProfile } from '../../const/interfaces';
 import { RESPONSE_STATUS_CODE, RESPONSE_STATUS_MESSAGE } from '../../const/enums';
-import * as profileDal from '../../db/dal/profile';
+import * as profileDal from '../../db/dal/profiles';
 
 export const getProfile = async (req: RequestWithProfile, res: Response, next: NextFunction) => {
   const profileId = req.get('profile_id');

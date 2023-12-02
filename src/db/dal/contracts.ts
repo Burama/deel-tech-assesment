@@ -18,6 +18,21 @@ export const getById = async (contractId: number): Promise<Contract> => {
   return await ContractModel.findByPk(contractId);
 }
 
+export const update = async (contract: Contract, transaction?: Transaction): Promise<void> => {
+  await ContractModel.update(
+    {
+      terms: contract.terms,
+      status: contract.status,
+    },
+    {
+      where: {
+        id: contract.id,
+      },
+      transaction
+    }
+  );
+}
+
 export const getAllNonTerminatedByProfileId= async (profileId: number): Promise<Contract[]> => {
   return await ContractModel.findAll({
     where: {
