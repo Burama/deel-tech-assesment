@@ -1,4 +1,4 @@
-import { Job } from '../../const/types';
+import { Job, Profile } from '../../const/types';
 import { PROFILE_TYPE, ERROR_INTERNAL } from '../../const/enums';
 
 import * as jobsDal from '../../db/dal/jobs';
@@ -9,16 +9,14 @@ export const getAllUnpaidForActiveContracts = async (profileId: number): Promise
   return await jobsDal.getAllUnpaidForActiveContracts(profileId);
 }
 
-export const payForJob = async (profileId: number, jobId: number): Promise<void> => {
-  const client = await profilesDal.getById(profileId);
-
+export const payForJob = async (client: Profile, jobId: number): Promise<void> => {
   if (client.type != PROFILE_TYPE.CLIENT) {
     throw Error(ERROR_INTERNAL.NOT_CLIENT);
   }
 
   const jobWithContract = await jobsDal.getJobWithContractById(jobId);
 
-  if (profileId != jobWithContract.contract.clientId) {
+  if (client.id != jobWithContract.contract.clientId) {
     throw Error(ERROR_INTERNAL.NOT_PERMITTED);
   }
 

@@ -30,7 +30,7 @@ jobsRouter.post('/:jobId/pay', getProfile, async(req: RequestWithProfile, res: R
   const jobId = Number(req.params.jobId);
 
   try {
-    await jobsController.payForJob(profile.id, jobId);
+    await jobsController.payForJob(profile, jobId);
     return res
       .status(RESPONSE_STATUS_CODE.OK)
       .send();

@@ -48,4 +48,5 @@ export class JobModel extends Model<JobModel> {
 
   @BelongsTo(() => ContractModel)
   public contract: ContractModel;
+  Sum: number;
 }

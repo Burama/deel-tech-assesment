@@ -1,4 +1,4 @@
-import { Op, Transaction } from "sequelize";
+import { Op, Transaction, col, fn } from "sequelize";
 import { Contract, Job, JobWithContract, Profile } from "../../const/types";
 import { ContractModel, JobModel } from "../models";
 import { CONTRACT_STATUS } from "../../const/enums";
@@ -55,5 +55,28 @@ export const getJobWithContractById = async (jobId: number): Promise<JobWithCont
   return await JobModel.findByPk(jobId, {
     include: ContractModel,
   });
+}
+
+export const getTotalPriceToPayByClientId = async (clientId: number): Promise<number> => {
+  const totalPrice = await JobModel.findAll({
+    attributes: [
+      [fn('SUM', col('price')), 'Sum']
+    ],
+    include: {
+      model: ContractModel,
+      where: {
+        clientId: clientId,
+        status: ['new', 'in_progress'],
+      },
+    },
+    where: {
+      paid: false
+    },
+    raw: true,
+  });
+
+  console.log(`TOTAL PRICE: ${totalPrice[0]?.Sum || 0}`);
+
+  return totalPrice[0]?.Sum || 0;
 }
 
