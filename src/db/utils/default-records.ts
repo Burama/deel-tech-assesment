@@ -6,25 +6,36 @@ import * as contractDal from '../dal/contract';
 import * as jobDal from '../dal/job';
 
 import { Profile, Contract, Job } from '../../const/types';
+import { sequelizeConnection } from '..';
+import { Transaction } from 'sequelize';
 
 export const createDefaultTableRecords = async (): Promise<void> => {
-  await createDefaultProfiles();
-  await createDefaultContracts();
-  await createDefaultJobs();
+  const transaction = await sequelizeConnection.transaction();
+
+  try {
+    await createDefaultProfiles(transaction);
+    await createDefaultContracts(transaction);
+    await createDefaultJobs(transaction);
+
+    await transaction.commit();
+  } catch (error) {
+    await transaction.rollback();
+    console.error(error);
+  }
 }
 
-const createDefaultProfiles = async (): Promise<void> => {
+const createDefaultProfiles = async (transaction: Transaction): Promise<void> => {
   for (const profile of defaultProfiles) {
-    await profileDal.create(profile as Profile);
+    await profileDal.create(profile as Profile, transaction);
   }
 }
-const createDefaultContracts = async (): Promise<void> => {
+const createDefaultContracts = async (transaction: Transaction): Promise<void> => {
   for (const contract of defaultContracts) {
-    await contractDal.create(contract as Contract);
+    await contractDal.create(contract as Contract, transaction);
   }
 }
-const createDefaultJobs = async (): Promise<void> => {
+const createDefaultJobs = async (transaction: Transaction): Promise<void> => {
   for (const job of defaultJobs) {
-    await jobDal.create(job as Job);
+    await jobDal.create(job as Job, transaction);
   }
 }
