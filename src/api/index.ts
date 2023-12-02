@@ -1,4 +1,5 @@
-import express, { Application, Request, Response } from 'express';
+import { Application, Request, Response } from 'express';
+import * as express from 'express';
 
 const api: Application = express();
 

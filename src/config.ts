@@ -1,5 +1,6 @@
 import * as dotenv from 'dotenv';
-import { CONFIG } from './const';
+
+import { CONFIG } from './const/enums';
 
 dotenv.config();
 
