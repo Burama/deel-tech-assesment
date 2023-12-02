@@ -77,6 +77,6 @@ export const getTotalPriceToPayByClientId = async (clientId: number): Promise<nu
 
   console.log(`TOTAL PRICE: ${totalPrice[0]?.Sum || 0}`);
 
-  return totalPrice[0]?.Sum || 0;
+  return totalPrice[0].Sum || 0;
 }
 

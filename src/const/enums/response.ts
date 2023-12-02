@@ -7,6 +7,8 @@ export enum RESPONSE_STATUS_CODE {
 }
 
 export enum RESPONSE_STATUS_MESSAGE {
+  MISSING_REQUIRED_PARAMS = 'Missing required params.',
+  INVALID_REQUEST_PARAMS = 'Invalid request params.',
   INVALID_REQUEST_BODY = 'Invalid request body.',
   UNAUTHORIZED = 'Unauthorized.',
   MISSING_PROFILE = 'Profile was not found.',

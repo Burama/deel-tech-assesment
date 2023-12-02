@@ -2,7 +2,7 @@ import api from './api';
 
 import { CONFIG } from './const/enums';
 import { sequelizeConnection } from './db';
-import { createDefaultTableRecords } from './db/helpers';
+import { createDefaultTableRecords } from './db/utils';
 import { getConfigValue, getServerUrl, isDev } from './config';
 
 const bootstrap = async () => {

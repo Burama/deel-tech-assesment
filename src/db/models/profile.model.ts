@@ -48,9 +48,9 @@ export class ProfileModel extends Model<ProfileModel> {
   public type: PROFILE_TYPE;
 
   /** Mapping */
-  @HasMany(() => ContractModel)
-  public readonly contractor: ContractModel[];
+  @HasMany(() => ContractModel, 'contractorId')
+  public readonly contractorContracts: ContractModel[];
 
-  @HasMany(() => ContractModel)
-  public readonly client: ContractModel[];
+  @HasMany(() => ContractModel, 'clientId')
+  public readonly clientContracs: ContractModel[];
 }

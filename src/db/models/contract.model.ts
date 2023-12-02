@@ -7,6 +7,7 @@ import {
   AllowNull,
   ForeignKey,
   HasMany,
+  BelongsTo,
 } from 'sequelize-typescript';
 
 import { CONTRACT_STATUS } from '../../const/enums';
@@ -47,4 +48,10 @@ export class ContractModel extends Model<ContractModel> {
   /** Mapping */
   @HasMany(() => JobModel)
   public readonly job: JobModel[];
+
+  @BelongsTo(() => ProfileModel)
+  public contractor: ProfileModel;
+
+  @BelongsTo(() => ProfileModel)
+  public client: ProfileModel;
 }
