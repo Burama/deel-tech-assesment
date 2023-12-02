@@ -2,7 +2,7 @@ import { sequelizeConnection } from "..";
 import { Job } from "../../const/types";
 import { JobModel } from "../models";
 
-export const createJob = async (job: Job): Promise<void> => {
+export const create = async (job: Job): Promise<void> => {
   const transaction = await sequelizeConnection.transaction();
 
   try {

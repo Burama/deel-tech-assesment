@@ -1,0 +1,3 @@
+export enum ERROR_INTERNAL {
+  NOT_PERMITTED = 'NOT_PERMITTED',
+}

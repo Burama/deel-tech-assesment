@@ -2,7 +2,7 @@ import { sequelizeConnection } from "..";
 import { Profile } from "../../const/types";
 import { ProfileModel } from "../models";
 
-export const createProfile = async (profile: Profile): Promise<void> => {
+export const create = async (profile: Profile): Promise<void> => {
   const transaction = await sequelizeConnection.transaction();
 
   try {
@@ -19,4 +19,8 @@ export const createProfile = async (profile: Profile): Promise<void> => {
     await transaction.rollback();
     console.error(error);
   }
+}
+
+export const getById = async (profileId: number): Promise<Profile> => {
+  return await ProfileModel.findByPk(profileId);
 }
