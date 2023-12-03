@@ -14,7 +14,7 @@ This GitHub repository contains the solution to the tech assessment task from De
 NOTE: .env file must be create based on .env.example.
 
 ```bash
-# Fomat
+# Install
 $ yarn install
 
 # Build
