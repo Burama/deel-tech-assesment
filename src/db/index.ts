@@ -6,7 +6,7 @@ import { ContractModel, JobModel, ProfileModel } from './models';
 export const sequelizeConnection = new Sequelize({
   dialect: getConfigValue(CONFIG.DB_DIALECT),
   storage: getConfigValue(CONFIG.DB_STORAGE_PATH),
-  models: [ContractModel, ProfileModel, JobModel]
+  models: [ContractModel, ProfileModel, JobModel],
 });
 
 const closeSequelizeConnection = async (): Promise<void> => {
@@ -18,12 +18,12 @@ const closeSequelizeConnection = async (): Promise<void> => {
     console.error('Error closing Sequelize connection:', error);
     process.exit(1);
   }
-}
+};
 
 process.on('SIGINT', async () => {
   await closeSequelizeConnection();
-})
+});
 
 process.on('SIGTERM', async () => {
   await closeSequelizeConnection();
-})
+});

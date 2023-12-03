@@ -22,20 +22,24 @@ export const createDefaultTableRecords = async (): Promise<void> => {
     await transaction.rollback();
     console.error(error);
   }
-}
+};
 
-const createDefaultProfiles = async (transaction: Transaction): Promise<void> => {
+const createDefaultProfiles = async (
+  transaction: Transaction,
+): Promise<void> => {
   for (const profile of defaultProfiles) {
     await profileDal.create(profile as Profile, transaction);
   }
-}
-const createDefaultContracts = async (transaction: Transaction): Promise<void> => {
+};
+const createDefaultContracts = async (
+  transaction: Transaction,
+): Promise<void> => {
   for (const contract of defaultContracts) {
     await contractDal.create(contract as Contract, transaction);
   }
-}
+};
 const createDefaultJobs = async (transaction: Transaction): Promise<void> => {
   for (const job of defaultJobs) {
     await jobDal.create(job as Job, transaction);
   }
-}
+};

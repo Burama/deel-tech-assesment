@@ -1,4 +1,4 @@
-import { PROFILE_TYPE } from "../enums";
+import { PROFILE_TYPE } from '../enums';
 
 export type Profile = {
   id?: number;
@@ -7,4 +7,4 @@ export type Profile = {
   lastName: string;
   profession: string;
   type: PROFILE_TYPE;
-}
+};

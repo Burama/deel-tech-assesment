@@ -6,7 +6,11 @@ import * as jobsDal from '../../db/dal/jobs';
 import * as profilesDal from '../../db/dal/profiles';
 import * as commondDal from '../../db/dal/common';
 
-export const transaferFunds = async (senderClient: Profile, receiverClientId: number, amount: number): Promise<void> => {
+export const transaferFunds = async (
+  senderClient: Profile,
+  receiverClientId: number,
+  amount: number,
+): Promise<void> => {
   if (senderClient.type !== PROFILE_TYPE.CLIENT) {
     throw Error(ERROR_INTERNAL.NOT_CLIENT);
   }
@@ -15,8 +19,10 @@ export const transaferFunds = async (senderClient: Profile, receiverClientId: nu
     throw Error(ERROR_INTERNAL.INSUFFICIENT_BALANCE);
   }
 
-  const totalPriceToPay = await jobsDal.getTotalPriceToPayByClientId(senderClient.id);
-  
+  const totalPriceToPay = await jobsDal.getTotalPriceToPayByClientId(
+    senderClient.id,
+  );
+
   if (totalPriceToPay > 0 && amount > 0.25 * totalPriceToPay) {
     throw Error(ERROR_INTERNAL.NOT_PERMITTED);
   }
@@ -28,4 +34,4 @@ export const transaferFunds = async (senderClient: Profile, receiverClientId: nu
   }
 
   await commondDal.transferFunds(senderClient, receiverClient, amount);
-}
+};

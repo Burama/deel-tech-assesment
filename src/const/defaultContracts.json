@@ -1,65 +1,65 @@
 [
   {
-    "id":1,
-    "terms":"bla bla bla",
-    "status":"terminated",
-    "clientId":1,
-    "contractorId":5
+    "id": 1,
+    "terms": "bla bla bla",
+    "status": "terminated",
+    "clientId": 1,
+    "contractorId": 5
   },
   {
-    "id":2,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":1,
-    "contractorId":6
+    "id": 2,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 1,
+    "contractorId": 6
   },
   {
-    "id":3,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":2,
-    "contractorId":6
+    "id": 3,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 2,
+    "contractorId": 6
   },
   {
-    "id":4,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":2,
-    "contractorId":7
+    "id": 4,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 2,
+    "contractorId": 7
   },
   {
-    "id":5,
-    "terms":"bla bla bla",
-    "status":"new",
-    "clientId":3,
-    "contractorId":8
+    "id": 5,
+    "terms": "bla bla bla",
+    "status": "new",
+    "clientId": 3,
+    "contractorId": 8
   },
   {
-    "id":6,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":3,
-    "contractorId":7
+    "id": 6,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 3,
+    "contractorId": 7
   },
   {
-    "id":7,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":4,
-    "contractorId":7
+    "id": 7,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 4,
+    "contractorId": 7
   },
   {
-    "id":8,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":4,
-    "contractorId":6
+    "id": 8,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 4,
+    "contractorId": 6
   },
   {
-    "id":9,
-    "terms":"bla bla bla",
-    "status":"in_progress",
-    "clientId":4,
-    "contractorId":8
+    "id": 9,
+    "terms": "bla bla bla",
+    "status": "in_progress",
+    "clientId": 4,
+    "contractorId": 8
   }
 ]

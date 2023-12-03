@@ -16,5 +16,5 @@ export enum RESPONSE_STATUS_MESSAGE {
   NOT_PERMITTED = 'Not permitted.',
   INTERNALL_ERROR = 'Internall error, please try again later.',
   INSUFFICIENT_BALANCE = 'Insufficient balance.',
-  FORBIDDEN_TO_DEPOSIT = 'Deposit amount is too high.'
+  FORBIDDEN_TO_DEPOSIT = 'Deposit amount is too high.',
 }

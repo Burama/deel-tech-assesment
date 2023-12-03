@@ -1,4 +1,4 @@
-import { Contract } from "./contract";
+import { Contract } from './contract';
 
 export type Job = {
   id?: number;
@@ -7,6 +7,6 @@ export type Job = {
   description: string;
   paymentDate?: Date;
   paid?: boolean;
-}
+};
 
-export type JobWithContract = Job & {contract:  Contract};
+export type JobWithContract = Job & { contract: Contract };

@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import { Router } from 'express';
 import contractsRouter from './contracts';
 import jobsRouter from './jobs';
 import balanceRouter from './balance';

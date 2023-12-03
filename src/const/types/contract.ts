@@ -1,4 +1,4 @@
-import { CONTRACT_STATUS } from "../enums";
+import { CONTRACT_STATUS } from '../enums';
 
 export type Contract = {
   id?: number;
@@ -6,4 +6,4 @@ export type Contract = {
   contractorId?: number;
   terms: string;
   status: CONTRACT_STATUS;
-}
+};

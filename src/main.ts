@@ -9,7 +9,7 @@ const bootstrap = async () => {
   const serverPort = getConfigValue(CONFIG.SERVER_PORT);
 
   await sequelizeConnection.sync({
-    force: isDev()? true : false,
+    force: isDev() ? true : false,
   });
 
   if (isDev()) {
@@ -18,10 +18,10 @@ const bootstrap = async () => {
 
   try {
     api.listen(serverPort, () => {
-      console.log(`Server is running at ${getServerUrl()}`)
+      console.log(`Server is running at ${getServerUrl()}`);
     });
   } catch (error) {
     console.log(error);
   }
-}
+};
 bootstrap();

@@ -1,6 +1,9 @@
 import { Profile } from '../../src/const/types';
 
-export const updateProfileWithNewBalance = (profile: Profile, newBalance: number): Profile => {
+export const updateProfileWithNewBalance = (
+  profile: Profile,
+  newBalance: number,
+): Profile => {
   return {
     id: profile.id,
     balance: newBalance,
@@ -8,5 +11,5 @@ export const updateProfileWithNewBalance = (profile: Profile, newBalance: number
     lastName: profile.lastName,
     profession: profile.profession,
     type: profile.type,
-  }
-}
+  };
+};
